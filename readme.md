@@ -6,5 +6,5 @@
 
 #### Задачи
 
-1) [Перестановки ( Уровень Medium )](./permutation/readme.md)
-2) [Массив Анаграмм ( Уровень Easy )](./anagramArray/readme.md)
+1) [Перестановки ( Уровень Medium )](./permutation/)
+2) [Массив Анаграмм ( Уровень Easy )](./anagramArray/)
