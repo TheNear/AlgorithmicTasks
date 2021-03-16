@@ -28,3 +28,21 @@ Output: [[1]]
 2)  -10 <= nums[i] <= 10 // Диапазон чисел во входном массиве от -10 до 10
 3)   All the integers of nums are unique. // Все числа во входном массиве уникальны
 ```
+
+<details>
+  <summary><b>Моё первое решение:</b></summary>
+  
+```javascript
+const generateParenthesis = (n) => {
+  const result = [];
+  const generate = (open, close, current) => {
+    if (current.length === n * 2) return result.push(current);
+    if (open <= close || open < n) generate(open + 1, close, current + "(");
+    if (open > close) generate(open, close + 1, current + ")");
+  };
+  generate(0, 0, "");
+  return result;
+};
+```
+  
+</details>

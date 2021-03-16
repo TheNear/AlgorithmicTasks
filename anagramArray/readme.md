@@ -22,3 +22,31 @@ console.log(getFirst("asd")) // asd;
 console.log(getFirst("link1")) // 1nkil;
 console.log(getFirst("linkd")) // null;
 ```
+
+<details>
+  <summary><b>Моё первое решение:</b></summary>
+  
+```javascript
+const getFirst = (str) => {
+  let result;
+  for (let arrStr of arr ) {
+    if (arrStr.length !== str.length) continue;
+    let temp = {}
+    for (let j = 0; j < str.length; j++) {
+      if (temp[arrStr[j]]) delete temp[arrStr[j]];
+      else temp[arrStr[j]] = true;
+      if (temp[str[j]]) delete temp[str[j]];
+      else temp[str[j]] = true;
+    }
+    if (!Object.keys(temp).length) {
+      if (result) {
+        return result;
+      }
+      result = arrStr;
+    }  
+  }
+  return null;
+};
+```
+  
+</details>
