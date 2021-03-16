@@ -33,15 +33,19 @@ Output: [[1]]
   <summary><b>Моё первое решение:</b></summary>
   
 ```javascript
-const generateParenthesis = (n) => {
-  const result = [];
-  const generate = (open, close, current) => {
-    if (current.length === n * 2) return result.push(current);
-    if (open <= close || open < n) generate(open + 1, close, current + "(");
-    if (open > close) generate(open, close + 1, current + ")");
-  };
-  generate(0, 0, "");
-  return result;
+const permute = (nums) => {
+  if (nums.length < 2) return [nums];
+  let flatIndex = nums.length - 2 > 0 ? nums.length - 2 : 0;
+  const subPermute = (tail, head) => {
+    if (tail.length < 2 ) return head ? head.concat(tail) : tail;
+    return tail.reduce((acc, cur, i, arr) => {
+      const arrTail = [...arr];
+      const arrHead = head ? head.concat(arrTail.splice(i, 1)) : arrTail.splice(i, 1);
+      acc.push(subPermute(arrTail,arrHead));
+      return acc;
+    }, []);
+  }
+  return subPermute(nums).flat(flatIndex);
 };
 ```
   
