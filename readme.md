@@ -15,3 +15,4 @@
 1) [Перестановки ( Уровень Medium )](./permutation/)
 2) [Массив Анаграмм ( Уровень Easy )](./anagramArray/)
 3) [Генератор Скобок ( Уровень Medium)](./GenerateParentheses)
+4) [Подмассивы (Уровень Medium)](./Subsets)

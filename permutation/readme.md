@@ -48,5 +48,5 @@ const permute = (nums) => {
   return subPermute(nums).flat(flatIndex);
 };
 ```
-  
+*Это решение оказалось довольно сложным, мне оно особо не понравилось, но это первое решение.*
 </details>

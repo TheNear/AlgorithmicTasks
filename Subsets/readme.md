@@ -30,6 +30,24 @@ Output: [[],[0]]
   <summary><b>Моё первое решение:</b></summary>
   
 ```javascript
+const subsets = (nums) => {
+    const result = [[]];
+
+    const createSubset = (cur, rest) => {
+      if (!rest.length) return;
+      for (let i = 0; i < rest.length; i++) {
+        const subResult = [...cur, rest[i]];
+        result.push(subResult);
+        createSubset(subResult, rest.slice(i + 1))
+      }
+    }
+
+    createSubset([] , nums);
+
+    return result;
+};
 ```
+
+*Первое решение, плохое решение по памяти, можно сделать без создания дополнительных функций*
   
 </details>

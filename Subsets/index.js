@@ -13,5 +13,19 @@ Output: [[],[0]]
 */
 
 const subsets = (nums) => {
-    
+    const result = [[]];
+
+    const createSubset = (cur, rest) => {
+      if (!rest.length) return;
+      for (let i = 0; i < rest.length; i++) {
+        const subResult = [...cur, rest[i]];
+        result.push(subResult);
+        createSubset(subResult, rest.slice(i + 1))
+      }
+    }
+
+    createSubset([] , nums);
+
+    return result;
 };
+
